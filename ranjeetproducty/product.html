@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .img-fluid{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+        <h1>Product List</h1>
+        <div class="container">
+            <div class="row" id="abc">
+
+            </div>
+
+        </div>
+        <div id="fetch"></div>
+
+        <ul id="productlistul">
+
+            <li id="empty"></li> 
+        </ul>
+
+
+<script>
+    const productList = [
+        { id: 1, name: 'PEN', price: 20, image: 'https://5.imimg.com/data5/SELLER/Default/2020/10/PX/KF/AW/20193325/ink-pen.jpg' },
+        { id: 1, name: 'PENCIL', price: 10, image: 'https://4.imimg.com/data4/PL/IY/MY-23695144/natraj-pencil.jpg' },
+        { id: 3, name: 'BOOK', price: 50, image: 'https://miro.medium.com/v2/resize:fit:5120/1*42ebJizcUtZBNIZPmmMZ5Q.jpeg'}
+  
+    ];
+    
+    
+      console.log(productList)
+
+        
+        const product = document.getElementById('fetch')
+        const abc = document.getElementById('abc')
+        console.log(product, "check Product");
+        
+            productList.map( (e) => {
+
+                let creatediv = document.createElement('div');
+                creatediv.setAttribute('class','col-md-4 w-25');
+                creatediv.setAttribute('id','col-4');
+                console.log(creatediv, "check");
+
+                //create image tag 
+                let createImg = document.createElement('img')
+                createImg.setAttribute('src', `${e.image}`);
+                createImg.setAttribute('class', 'img-fluid');
+
+
+                //create h1 tag 
+                let createH1 = document.createElement('h1')
+                createH1.innerHTML= `${e.name}`
+                
+
+
+                //image tag append in div
+                creatediv.appendChild(createImg);
+                creatediv.appendChild(createH1);
+
+                console.log(creatediv, "check creatediv" );
+                abc.appendChild(creatediv)
+
+            
+                //  let createh1 =document.createElement ('h1')
+                //  let createimage = document.createElement('img')
+                //  createimage.setAttribute('src', `${e.image}`)
+                //  createimage.setAttribute('class', 'img-fluid')
+                //  console.log(createimage, "Hwello Image");
+                //  createh1.innerHTML = `${e.name}`
+                //  product.appendChild(createh1)
+                //  product.appendChild(createimage)
+             }
+            
+             )
+
+    //     const fetchUl = document.getElementById('productlistul')
+    //     console.log(fetchUl);
+            
+    //         productList.map( (e) => {
+    //             let createLi = document.createElement('li');
+    //             createLi.innerHTML = `${e.name}`
+    //             fetchUl.appendChild(createLi)
+
+
+    // })
+
+
+  
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
