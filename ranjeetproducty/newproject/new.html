@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-size: cover;        
+        }
+       .w-25{
+        width: 45%;
+        float: left;
+
+       }
+     img{
+        width: 300px;
+    }
+    .img-fluid{
+            width: 200px;
+        }
+       .head2{text-align: center;
+                margin-bottom: 2px;  
+            color: white;  
+            } 
+         .w-30{
+            width: 30%;
+            background-image: url(https://tse2.mm.bing.net/th?id=OIP.A9YdQfrEZeH17ICSwHuM9AHaJ6&pid=Api&P=0&h=180);
+         }
+    </style>
+</head>
+<body>
+
+    <h1>New Headphone In My site</h1>
+    <section class="main" id="main">
+        <div class="getdata" id="getdata"></div>
+        <div class="slid" id="slid"></div>
+           
+    
+
+
+    </section>
+
+
+    <script>
+     document.body.style.backgroundImage = "url('https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/iPhone12pro-13-scaled.jpg' )";
+     
+    
+      
+      const newtoy = [
+        {id:1, name:'neckband', price:1199, image: 'https://tse2.mm.bing.net/th?id=OIP.s4bwe0cWY_GOzlwdXe2osAHaEK&pid=Api&P=0&h=180' },
+        {id:2, name:'airpods', price:1199, image: 'https://tse1.explicit.bing.net/th?id=OIP.6hbt1uDnDZ54E6VGZc1OFgHaFj&pid=Api&P=0&h=180' },
+        {id:3, name:'airpodsPro', price:1199, image: 'https://www.ilounge.com/wp-content/uploads/2023/11/AirPods-Pro-1.png'}
+      ]
+     console.log(newtoy);
+  const newhed = document.getElementById('main')
+   let toy = document.getElementById('getdata') 
+   console.log(toy, "check the toy");
+   console.log(newhed, "check the toy");
+
+    newtoy.map ((e) =>{
+         let creatediv = document.createElement('div')
+         creatediv.setAttribute('class','w-25')
+         
+console.log(creatediv,'check new div');
+
+let creath1 = document.createElement('h1')
+          creath1.innerHTML = `${e.name}`
+          console.log(creath1);
+        
+  //creat price list
+     let creath2 = document.createElement('h2')
+         creath2.setAttribute('class','head2')
+         creath2.innerHTML = `${e.price}`  
+     console.log(creath2);
+    
+  
+     let createImg = document.createElement('img')
+                createImg.setAttribute('src', `${e.image}`);
+                createImg.setAttribute('class', 'img-fluid');
+
+    newhed.appendChild(createImg)
+   // appendChild in div
+
+   creatediv.appendChild(createImg)
+   creatediv.appendChild(creath1)
+   creatediv.appendChild(creath2)
+
+   console.log(creatediv);
+     
+   main.appendChild(creatediv)
+    
+    })
+
+
+    // next slid................
+    const slidshow = [
+        {id:1,name: "hello jd class students", heading: "bye students"},
+        {id:2,name: "hello jd class students", heading: "bye students"},
+        {id:3,name: "hello jd class students", heading: "bye students"}
+    ]
+  console.log(slidshow);
+
+     let slid = document.getElementById("slid")
+ console.log(slid, 'get slid');
+  slidshow.map ((e) =>{
+
+    let creatediv = document.createElement('div')
+         creatediv.setAttribute('class','w-30')
+         console.log(creatediv,"this is new div");
+
+
+         let creath1 =document.createElement('h1')
+         creath1.setAttribute('class',"sendh1")
+         creath1.innerHTML = `${e.name}` 
+         console.log(creath1);
+         
+         let creath2 =document.createElement('h2')
+         creath1.setAttribute('class',"sendh2")
+         console.log(creath2);
+         let creath3 =document.createElement('h3')
+         creath1.setAttribute('class',"sendh3")
+         console.log(creath3);
+
+
+         creatediv.appendChild(creath1)
+         creatediv.appendChild(creath2)
+         creatediv.appendChild(creath)
+         console.log(creatediv);
+
+ 
+
+
+  })
+
+    </script>
+</body>
+</html>
